@@ -10,7 +10,13 @@ function writePassword() {
   
   function generatePassword() {
     password = "";
-    
+
+    const keypool = {
+      upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      lowerCase: "abcdefghijklmnopqrstuvwxyz",
+      number: "0123456789",
+      special: "!@#$%^&*()-_=+[{]}\|;:,<.>/?`~"  
+    }
 
     function getlength() {
       var length = prompt("Enter length of password between 8 and 128");
