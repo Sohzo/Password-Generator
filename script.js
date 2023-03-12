@@ -10,6 +10,7 @@ function writePassword() {
   
   function generatePassword() {
     password = "";
+    
 
     function getlength() {
       var length = prompt("Enter length of password between 8 and 128");
@@ -21,8 +22,14 @@ function writePassword() {
         }
     
     }
+
+    var incLowercase = confirm("Would you like to include lowercase letters?");
+    var incUppercase = confirm("Would you like to include uppercase letters?");
+    var incNumbers = confirm("Would you like to include numbers?");
+    var incSpecial = confirm("would you like to include special characters");
     
-    
+
+
 
 
 
