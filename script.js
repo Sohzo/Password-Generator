@@ -9,8 +9,38 @@ function writePassword() {
   passwordText.value = password;
   
   function generatePassword() {
-    password
-  }
+    password = "";
+
+    function getlength() {
+      var length = prompt("Enter length of password between 8 and 128");
+        if (length >= 9 && length <= 128) {
+          console.log(length);
+        } else {
+          alert("Number not within range")
+          getlength()
+        }
+    
+    }
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return password;
+  };
 }
 
 // Add event listener to generate button
