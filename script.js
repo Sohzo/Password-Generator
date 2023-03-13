@@ -41,8 +41,25 @@ function writePassword() {
     }
 
 
+    var passOptions = []
+    
+    if (incLowercase) {
+      passOptions = passOptions.concat(keypool.lowerCase)
+    }
 
+    if (incUppercase) {
+      passOptions = passOptions.concat(keypool.upperCase)
+    }
 
+    if (incNumbers) {
+      passOptions = passOptions.concat(keypool.number)
+    }
+
+    if (incSpecial) {
+      passOptions = passOptions.concat(keypool.special)
+    }
+
+    console.log(passOptions)
 
 
 
