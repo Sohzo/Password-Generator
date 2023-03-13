@@ -11,6 +11,7 @@ function writePassword() {
   function generatePassword() {
     password = "";
 
+    // Defines pool from which characters are taken
     const keypool = {
       upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
       lowerCase: "abcdefghijklmnopqrstuvwxyz",
@@ -18,10 +19,10 @@ function writePassword() {
       special: "!@#$%^&*()-_=+[{]}\|;:,<.>/?`~"  
     }
 
+    // Asks for length of password and denies input outside of bounds
     function getlength() {
       var passlength = prompt("Enter length of password between 8 and 128");
       if (passlength >= 9 && passlength <= 128) {
-        //console.log(passlength);
         window.passlength = passlength;
       } else {
         alert("Number not within range")
@@ -31,16 +32,18 @@ function writePassword() {
 
     getlength()
 
+    // Asks if user wants different criteria
     var incLowercase = confirm("Would you like to include lowercase letters?");
     var incUppercase = confirm("Would you like to include uppercase letters?");
     var incNumbers = confirm("Would you like to include numbers?");
     var incSpecial = confirm("would you like to include special characters");
     
+    // If user selects no criteria, restarts questions
     if (!incLowercase && !incUppercase && !incNumbers && !incSpecial === true) {
       alert("Please select at least one option");
     }
 
-
+    // Creates array and concatenates pool matching criteria selected
     var passOptions = []
     
     if (incLowercase) {
@@ -59,10 +62,11 @@ function writePassword() {
       passOptions = passOptions.concat(keypool.special)
     }
 
+    // Joins array into a single string for random selection
     passOptions = passOptions.join("")
     console.log(passOptions)
 
-
+    // Randomly selects a character for each character length requested
     for (var i = 0; i < passlength; i++) {
       password = password + passOptions[Math.floor(Math.random() * passOptions.length)];
     }
