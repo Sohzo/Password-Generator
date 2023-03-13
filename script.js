@@ -59,21 +59,14 @@ function writePassword() {
       passOptions = passOptions.concat(keypool.special)
     }
 
+    passOptions = passOptions.join("")
     console.log(passOptions)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    for (var i = 0; i < passlength; i++) {
+      password = password + passOptions[Math.floor(Math.random() * passOptions.length)];
+    }
+  
     return password;
   };
 }
