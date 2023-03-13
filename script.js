@@ -35,9 +35,10 @@ function writePassword() {
     var incUppercase = confirm("Would you like to include uppercase letters?");
     var incNumbers = confirm("Would you like to include numbers?");
     var incSpecial = confirm("would you like to include special characters");
-
     
-    
+    if (!incLowercase && !incUppercase && !incNumbers && !incSpecial === true) {
+      alert("Please select at least one option");
+    }
 
 
 
