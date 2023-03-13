@@ -16,3 +16,4 @@ The following image shows the webpage after entering 75 for password length, and
 
 ## Link to Deployed Application
 
+https://sohzo.github.io/Password-Generator/
